@@ -6,7 +6,7 @@ var User = require("../schemas/user");
  * Route that return all the users presents in the database
  */
 router.get('/', function(req, res, next) {
-  res.json({ coucou: "shops" });
+  res.json({ coucou: "users" });
 });
 
 
