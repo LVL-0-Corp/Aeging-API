@@ -5,7 +5,6 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 const DB_CONFIG = require("./config/db");
 
-var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var shopsRouter = require("./routes/shops");
 
@@ -26,7 +25,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/shops", shopsRouter);
 
