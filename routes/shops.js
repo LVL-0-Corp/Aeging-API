@@ -27,7 +27,7 @@ router.post("/add", function(req, res, next) {
     } else {
       res.json({ newShop: "success.shop.add" });
     }
-  });
+  }); 
 });
 
 /**
