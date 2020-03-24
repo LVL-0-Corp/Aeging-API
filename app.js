@@ -7,6 +7,7 @@ const DB_CONFIG = require("./config/db");
 
 var usersRouter = require("./routes/users");
 var shopsRouter = require("./routes/shops");
+var productsRouter = require("./routes/products");
 
 var app = express();
 
@@ -27,5 +28,6 @@ app.use(cookieParser());
 
 app.use("/users", usersRouter);
 app.use("/shops", shopsRouter);
+app.use("/products", productsRouter);
 
 module.exports = app;

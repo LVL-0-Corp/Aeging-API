@@ -14,5 +14,3 @@ SHOP.methods.getName = () => {
 const Shop = mongoose.model("shop", SHOP);
 
 module.exports = Shop;
-
-//fefefef

@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
  * {
  *  firstName: First Name of the user,
  *  lastName: Last Name of the user,
- *  mail: Email of the user,
+ *  mail: Email of the user, 
  *  status: Status of the user ()}
  */
 router.post("/add", function(req, res, next) {
