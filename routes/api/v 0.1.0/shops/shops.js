@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
-var Shop = require("../schemas/shop");
-var { getAllShops, getShopById, addShop } = require("../middleware/shopMW")
+var Shop = require("../../../../schemas/shop");
+var { getAllShops, getShopById, addShop } = require("../../../../middleware/shopMW")
 
 /**
  * Route that return all the shops presents in the database
@@ -40,9 +40,9 @@ router.get("/local", function(req, res, next) {
  * }
  */
 router.post("/add", async function(req, res, next) {
-  const { name, lat, long, type } = req.body;  
+  const { name, lat, long, type, shortDescription, imageUrl } = req.body;  
   try {
-    const shopCreated = await addShop(name, lat, long, type);
+    const shopCreated = await addShop(name, lat, long, type, shortDescription, imageUrl);
     res.json(shopCreated);
   } catch(err) {
     res.json(err);

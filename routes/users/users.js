@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var User = require("../schemas/user");
+var User = require("../../schemas/user");
 
 /**
  * Route that return all the users presents in the database

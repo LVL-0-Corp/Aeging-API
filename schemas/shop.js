@@ -4,7 +4,9 @@ var Schema = mongoose.Schema;
 const SHOP = new Schema({
   name: String,
   position: { lat: mongoose.Decimal128, long: mongoose.Decimal128 },
-  type: Number
+  type: Number,
+  shortDescription: String,
+  imageUrl: String
 });
 
 SHOP.methods.getName = () => {

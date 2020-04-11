@@ -19,9 +19,9 @@ async function getShopById(shopId) {
   }
 }
 
-async function addShop(name, lat, long, type){    
+async function addShop(name, lat, long, type, shortDescription, imageUrl){    
     try{
-        const newShop = new Shop({ name, position: { lat, long }, type });
+        const newShop = new Shop({ name, position: { lat, long }, type, shortDescription, imageUrl});
         await newShop.save();        
         return ({ newShop: "success.shop.add" });
     } catch(err){
