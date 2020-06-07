@@ -6,7 +6,10 @@ const SHOP = new Schema({
   position: { lat: mongoose.Decimal128, long: mongoose.Decimal128 },
   type: Number,
   shortDescription: String,
-  imageUrl: String
+  longDescription: String,
+  imageUrl: String,
+  imagesUrl: [String],
+  address: String
 });
 
 SHOP.methods.getName = () => {

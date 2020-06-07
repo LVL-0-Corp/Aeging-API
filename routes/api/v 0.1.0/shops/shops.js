@@ -40,15 +40,15 @@ router.get("/local", function(req, res, next) {
  * }
  */
 router.post("/add", async function(req, res, next) {
-  const { name, lat, long, type, shortDescription, imageUrl } = req.body;  
+  const { name, lat, long, type, shortDescription, longDescription, imageUrl, imagesUrl, address } = req.body;  
   try {
-    const shopCreated = await addShop(name, lat, long, type, shortDescription, imageUrl);
+    var firstImage = [imageUrl];
+    var images = firstImage.concat(imagesUrl);
+    const shopCreated = await addShop(name, lat, long, type, shortDescription, longDescription, imageUrl, images, address);
     res.json(shopCreated);
   } catch(err) {
     res.json(err);
   }
-  
-  
 });
 
 /**
