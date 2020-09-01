@@ -15,6 +15,7 @@ router.get("/", async function(req, res, next) {
   }
 });
 
+
 /**
  * Route that return all the shops bio presents in the database
  */
