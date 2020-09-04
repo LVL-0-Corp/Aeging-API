@@ -2,13 +2,16 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 const PRODUCT = new Schema({
-  name: String,
-  price: Number,
-  type: Number
+  productName: String,
+  productImage: String,
+  productPrice: Number, 
+  productPriceType: Boolean,
+  productType: String,
+  productDesc: String
 });
 
 PRODUCT.methods.getName = () => {
-  return this.name;
+  return this.productName;
 };
 
 const Product = mongoose.model("product", PRODUCT);
