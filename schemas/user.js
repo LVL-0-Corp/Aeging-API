@@ -3,21 +3,17 @@ var extendSchema = require("./schemaExtender");
 var Schema = mongoose.Schema;
 
 const USER = new Schema({
+  date: Date, 
+  address: String, 
+  city: String, 
+  CP: String, 
+  phone: String,
   firstName: String,
   lastName: String,
-  mail: String,
-  password: String,
-  token: [String],
-  status: Number
+  mail: {type: String, required:true, unique:true},
+  password: {type: String, required: true},
+  token: [String]
 });
-
-const PARTICULIER = extendSchema(USER,{
-  Pseudo: String,
-  Sexe: Number,
-  Tel: Number,
-  ImageUrl: String,
-  Naissance: String
-})
 
 const Pro = extendSchema(USER,{
   Siret: String,
@@ -25,7 +21,6 @@ const Pro = extendSchema(USER,{
   Secteur: Number
 })
 
-const LambdaUser = mongoose.model("lambdaUser",PARTICULIER,"user");
 const User = mongoose.model("user", USER);
 
 module.exports = User;

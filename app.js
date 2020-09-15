@@ -6,7 +6,6 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 const DB_CONFIG = require("./config/db");
 
-var usersRouter = require("./routes/users/users");
 var productsRouter = require("./routes/api/v 0.1.0/products/products");
 var app = express();
 
@@ -46,8 +45,11 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use("/users", usersRouter);
 app.use("/api", require("./routes/api/"));
 app.use("/products", productsRouter);
-
+app.get('/',async function(req, res, next) {
+  res.json({
+    'hey':'coucou'
+  })
+});
 module.exports = app;
